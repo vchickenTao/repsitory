@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java从入门到放弃</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <link rel="shortcut icon" href="avator.jpg" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!--目录分层收起-->
+    <!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" id="thyme">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+    <!-- 暗黑主题插件样式 -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" id="dark">
+    <link rel="stylesheet" href="static/css/code.css">
+
+    <style>
+        :root {
+            --docsifytabs-border-color: #ededed;
+            --docsifytabs-tab-highlight-color: green;
+        }
+
+        * {
+            /*font-family: initial;*/
+            /*font-weight: 300;*/
+            /*font-size: 16px;*/
+            /*line-height: 16px;*/
+            /*-moz-box-sizing: border-box;*/
+            /*-webkit-box-sizing: border-box;*/
+            /*box-sizing: border-box;*/
+            /*font-size: 16px;*/
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .drag-me {
+            background: mediumspringgreen;
+            width: 52px;
+            height: 50px;
+            padding: 3px 9px;
+            position: fixed;
+            top: 20%;
+            right: 1%;
+            margin-left: -90px;
+            margin-top: -20px;
+            cursor: move;
+            cursor: -webkit-grab;
+            cursor: -moz-grab;
+            -moz-transition: box-shadow 0.2s;
+            -o-transition: box-shadow 0.2s;
+            -webkit-transition: box-shadow 0.2s;
+            transition: box-shadow 0.2s;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 50%;
+            z-index: 999;
+        }
+
+        .drag-me:hover {
+            -moz-box-shadow: #830f94 0 1px 3px;
+            -webkit-box-shadow: #830f94 0 1px 3px;
+            box-shadow: #830f94 0 1px 3px;
+        }
+
+        .drag-me:active {
+            cursor: move;
+            cursor: -webkit-grabbing;
+            cursor: -moz-grabbing;
+        }
+
+        .drag-me:before {
+            /*content: '.';*/
+            /*position: absolute;*/
+            /*left: 14px;*/
+            /*font-size: 20px;*/
+            /*line-height: 20px;*/
+            /*color: #ac14c2;*/
+            /*text-shadow: 0 5px #ac14c2, 0 10px #ac14c2, 5px 0 #ac14c2, 5px 5px #ac14c2, 5px 10px #ac14c2, 10px 0 #ac14c2, 10px 5px #ac14c2, 10px 10px #ac14c2;*/
+        }
+
+        .drag-me span {
+            color: #ffffff;
+            line-height: 42px;
+        }
+
+
+        #docsify-darklight-theme {
+            top: 0px;
+            /*z-index: 999;*/
+            /*width: 20px;*/
+            /*height: 20px;*/
+        }
+
+
+        pre[class*=language-], pre code {
+            position: relative;
+            background-color: #282c34 !important;
+            border-radius: 10px;
+        }
+
+        .scroll-to-top {
+            background: #42b983!important;
+            border-radius: 20%!important;
+            width: 40px!important;
+            height: 40px!important;
+            line-height: 37px!important;
+        }
+
+        .markdown-section code, .markdown-section output:after, .markdown-section pre {
+            font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
+        }
+
+        .markdown-section pre > code {
+            font-weight: initial;
+        }
+
+        pre code[class*=language-] {
+            color: #cccccc;
+        }
+
+        .markdown-section pre:before {
+            content: '';
+            display: block;
+            background: url(https://notebook.js.org/images/20220519-02-myinfo.png);
+            height: 30px;
+            background-size: 50px;
+            background-repeat: no-repeat;
+            background-position: 10px 15px;
+        }
+    </style>
+    <style type="text/css">
+        ::-webkit-scrollbar {
+            width: 10px; /*对垂直流动条有效*/
+            height: 10px; /*对水平流动条有效*/
+        }
+
+        /*定义滚动条的轨道颜色、内阴影及圆角*/
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            border-radius: 3px;
+        }
+
+
+        /*定义滑块颜色、内阴影及圆角*/
+        ::-webkit-scrollbar-thumb {
+            border-radius: 7px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #E8E8E8;
+        }
+
+        /*定义两端按钮的样式*/
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        /*定义右下角汇合处的样式*/
+        ::-webkit-scrollbar-corner {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="drag-me" title="点击切换主题">-->
+<!--    <span>主题</span>-->
+<!--</div>-->
+<div id="app">🦅 玩了命の加载中...</div>
+<script>
+    window.$docsify = {
+        name: '🐕 <span style="font-size: 22px!important;font-weight: bold;font-family: Droid Sans">Java从入门到放弃</span>',
+        repo: 'https://github.com/vchickenTao',
+        // logo: "https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-08-05/20220805213957-FZtGKN5irpPJbhHQ3N5m.jpg",
+        search: {
+            maxAge: 86400000,
+            paths: 'auto',
+            placeholder: '🔍 搜索',
+            noData: '😞 没有结果!',
+            depth: 5
+        },
+        count: {
+            countable: true,
+            fontsize: '0.9em',
+            color: 'rgb(90,90,90)',
+            language: 'chinese'
+        },
+        auto2top: true, // 切换页面后是否自动跳转到页面顶部
+        //代码一键复制
+        copyCode: {
+            buttonText: '复制',
+            errorText: '复制失败',
+            successText: '复制成功'
+        },
+        externalLinkTarget: '_blank', // 外部链接的打开方式，默认_blank
+        cornerExternalLinkTarget: '_blank', // 右上角链接的打开方式。默认为 _blank
+        routerMode: 'hash', // 路由方式 默认hash
+        notFoundPage: true, // 在找不到指定页面时加载_404.md
+        // loadSidebar: true,
+        subMaxLevel: 5,
+        loadNavbar: true,
+        coverpage: true,
+        onlyCover: true,
+        alias: { // 定义路由别名，可以更自由的定义路由规则。 支持正则
+            '/.*/_sidebar.md': '/_sidebar.md',//防止意外回退
+            '/.*/_navbar.md': '/_navbar.md'
+        },
+        sidebarDisplayLevel: 1,
+        disqus: 'shortname',
+        'flexible-alerts': {
+            style: 'flat'
+        },
+        tabs: {
+            persist: true,      // default
+            sync: true,      // default
+            theme: 'classic', // default
+            tabComments: true,      // default
+            tabHeadings: true       // default
+        },
+
+        markdown: {
+            smartypants: true,
+            // renderer: {
+            //     link: function () {
+            //         // ...
+            //     },
+            // },
+            // function
+            markdown: function (marked, renderer) {
+                // ...
+                return marked;
+            },
+        },
+        scrollToTop: {
+            auto: true,
+            text: '🔝',
+            right: 15,
+            bottom: 20,
+            offset: 500
+        },
+        plantuml: {
+            skin: 'default',
+        },
+        // plugins: [
+        //     EditOnGithubPlugin.create('https://github.com/vchickenTao/java-demo/master/'),
+        //     // footer
+        //     function(hook) {
+        //         var ad = '';
+        //
+        //         var footer = [
+        //             '<hr/>',
+        //             '<footer>',
+        //             '<span><a href="https://beian.miit.gov.cn" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">蒙ICP备19001663号</a><br/>&copy; 2021 Hutool Project. All Rights Reserved.</span>',
+        //             '<span><a href="https://docsify.js.org" target="_blank">Powered by docsify</a></span>',
+        //             '</footer>'
+        //         ].join('');
+        //         footer='';
+        //
+        //         hook.afterEach(function(html) {
+        //             return ad + html + footer;
+        //         });
+        //     }
+        // ],
+        executeScript: true,
+        mergeNavbar: true,
+        formatUpdated: "更新于{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}",
+        plugins: [
+            function (hook, vm) {
+                hook.beforeEach(function (html) {
+                    // var url = 'https://github.com/wugenqiang/CS-Notes/tree/master/' + vm.route.file
+                    // var editHtml = '[???? EDIT DOCUMENT](' + url + ')\n'
+                    // var editHtml_end = '[???? Edit Document](' + url + ')\n'
+                    // return editHtml
+                    //     + html
+                    //     + '\n----\n'
+                    //     + '> Last Modified {docsify-updated} '
+                    //     + editHtml_end
+                    var footer = [
+                        '<hr/>',
+                        '<footer>',
+                        '<span><a href="https://github.com/vchickenTao">@vchicken</a> &copy;2022.</span>',
+                        '<span>  {docsify-updated}</span>',
+                        '<span style="margin-left: 10px;"><a href="https://docsify.js.org" target="_blank">Powered by docsify</a></span>',
+                        '</footer>'
+                    ].join('');
+                    return html + footer;
+                })
+            }
+        ],
+        themeColor: "#42b983", // 暗黑模式主题色
+        darklightTheme: {
+            siteFont: "",
+            defaultTheme: 'light',
+            codeFontFamily: 'Roboto Mono, Monaco, courier, monospace',
+            bodyFontSize: '15px',
+            dark: {
+                accent: '#42b983',
+                toogleBackground: '#ffffff',
+                background: '#000',
+                textColor: '#ffffff',
+                codeTextColor: '#ffffff',
+                codeBackgroudColor: '#0e2233',
+                borderColor: '#0d2538',
+                // blockQuoteColour: '#858585',
+                highlightColor: '#d22778',
+                sidebarSublink: '#b4b4b4',
+                codeTypeColor: '#ffffff',
+                coverBackground: 'linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)',
+                toogleImage: 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)'
+            },
+            light: {
+                accent: '#42b983',
+                toogleBackground: '#091a28',
+                background: '#ffffff',
+                textColor: '#34495e',
+                codeTextColor: '#ffffff',
+                codeBackgroudColor: '#f8f8f8',
+                borderColor: 'rgba(0, 0, 0, 0.07)',
+                blockQuoteColor: '#858585',
+                highlightColor: '#d22778',
+                // sidebarSublink: '#b4b4b4',
+                codeTypeColor: '#091a28',
+                coverBackground: 'linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)',
+                toogleImage: 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)'
+            }
+        },
+    }
+</script>
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: 'Github Application Client ID',
+        clientSecret: 'Github Application Client Secret',
+        repo: 'Github repo',
+        owner: 'Github repo owner',
+        admin: ['Github repo collaborators, only these guys can initialize github issues'],
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+    })
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
+<!-- 暗黑主题切换插件 -->
+<!--不同代码的高亮-->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-c.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-cpp.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-java.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-sql.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-c.js"></script>
+<script src="//unpkg.com/prismjs@1.23.0/components.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-java.min.js"></script>
+<!--代码复制-->
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+<script src="https://unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
+<!--主题-->
+<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+
+<!--卜蒜子访问统计-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- pdf-->
+<!-- PDFObject.js is a required dependency of this plugin -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+<!-- This is the source code of the pdf embed plugin -->
+<script src="path-to-file/docsify-pdf-embed.js"></script>
+<!-- or use this if you are not hosting the file yourself -->
+<script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+
+<!--  Tip-->
+<!-- Latest -->
+<script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+<!--Top-->
+<script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
+<!-- docsify-tabs (latest v1.x.x) -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+<!--UML-->
+<script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+<script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<!-- plugins -->
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+<script src="http://vchicken.cn/note/static/js/jquery-3.6.0.min.js"></script>
+<script src="http://vchicken.cn/note/static/js/jquery-migrate.min.js"></script>
+<script src="static/js/jquery-ui.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+
+<script>
+    $(function () {
+        let href = localStorage.getItem('href') || "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
+        let background = localStorage.getItem('background') || "mediumspringgreen";
+        let color = localStorage.getItem('color') || "#ffffff";
+        if (href) {
+            $('#thyme').attr("href", href)
+            if (background) {
+                $('.drag-me').css("background", background);
+            }
+            if (color) {
+                $('.drag-me span').css("color", color)
+            }
+        } else {
+            $('#thyme').attr("href", "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css")
+            $('.drag-me').css("background", "mediumspringgreen")
+            $('.drag-me span').css("color", "#ffffff")
+        }
+        $(".drag-me").draggable();
+
+        let flag = true;
+
+        $('.drag-me').click(function () {
+            if (!flag) {
+                return false;
+            }
+            flag = false;
+            // $('#dark').removeAttr("href")
+            let random = Math.round(Math.random() * 10);
+            let href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
+            let background = "mediumspringgreen";
+            let color = "#ffffff";
+            if (random >= 0 && random < 3) {
+                href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css";
+                background = "steelblue";
+            } else if (3 <= random && random < 5) {
+                href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css";
+                background = "dodgerblue";
+            } else if (5 <= random && random < 7) {
+                href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css";
+                background = "dodgerblue";
+            } else {
+                let random1 = Math.round(Math.random() * 10);
+                if (random1 <= 6) {
+                    href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
+                } else {
+                    if (random1 === 7) {
+                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/pure.css";
+                        background = "black";
+                    } else if (random1 === 8) {
+                        background = "indianred";
+                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css";
+                    } else if (random1 === 9) {
+                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/buble.css";
+                        background = "dodgerblue";
+                    } else {
+                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dolphin.css";
+                        background = "skyblue"
+                    }
+                }
+            }
+            $('#thyme').attr("href", href)
+            $('.drag-me').css("background", background);
+            $('.drag-me span').css("color", color)
+            localStorage.setItem('href', href);
+            localStorage.setItem('background', background);
+            localStorage.setItem('color', color);
+            flag = true;
+        })
+    });
+</script>
+</body>
+</html>
