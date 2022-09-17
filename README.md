@@ -65,7 +65,7 @@
       - [LinkedHashSet&Map](java/集合/LinkedHashSet&Map源码解析)
       - [TreeSet&TreeMap](java/集合/TreeSet&TreeMap源码解析)
       - [WeakHashMap](java/集合/WeakHashMap源码解析)
-        - [Java集合使用注意事项总结](java/集合/Java集合使用注意事项总结)
+      - [Java集合使用注意事项总结](java/集合/Java集合使用注意事项总结)
 
 ## Java虚拟机(JVM)
    - [结构和目录](java/JVM/first)
@@ -196,9 +196,14 @@
    - [SpringMVC](frame/SpringMVC)
 
 ## SpringBoot
-   - [入门 - 初识SpringBoot](frame/Springboot/初识SpringBoot)
-   - [入门 - HelloWorld](frame/Springboot/HelloWorld)
-   - [入门 - 自动配置原理](frame/Springboot/自动配置原理)
+   - Springboot入门
+       - [Springboot入门 - 初识SpringBoot](frame/Springboot/初识SpringBoot)
+       - [Springboot入门 - HelloWorld](frame/Springboot/HelloWorld)
+       - [Springboot入门 - 自动配置原理](frame/Springboot/自动配置原理)
+   
+   - Springboot核心功能
+     - [Springboot核心功能 - 配置文件](frame/Springboot/配置文件)
+     - [Springboot核心功能 - Web开发](frame/Springboot/Web开发)
 
 ## SpringCloud
    - [SpringCloud](frame/SpringCloud)

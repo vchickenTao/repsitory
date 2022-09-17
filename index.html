@@ -21,19 +21,14 @@
             --docsifytabs-tab-highlight-color: green;
         }
 
-        * {
-            /*font-family: initial;*/
-            /*font-weight: 300;*/
-            /*font-size: 16px;*/
-            /*line-height: 16px;*/
-            /*-moz-box-sizing: border-box;*/
-            /*-webkit-box-sizing: border-box;*/
-            /*box-sizing: border-box;*/
-            /*font-size: 16px;*/
-        }
 
         body {
             margin: 0;
+
+        }
+
+        .app-nav{
+            color: #34495e!important;
         }
 
         .drag-me {
@@ -89,9 +84,6 @@
 
         #docsify-darklight-theme {
             top: 0px;
-            /*z-index: 999;*/
-            /*width: 20px;*/
-            /*height: 20px;*/
         }
 
 
@@ -171,7 +163,6 @@
     window.$docsify = {
         name: '🐕 <span style="font-size: 22px!important;font-weight: bold;font-family: Droid Sans">Java从入门到放弃</span>',
         repo: 'https://github.com/vchickenTao',
-        // logo: "https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-08-05/20220805213957-FZtGKN5irpPJbhHQ3N5m.jpg",
         search: {
             maxAge: 86400000,
             paths: 'auto',
@@ -185,7 +176,8 @@
             color: 'rgb(90,90,90)',
             language: 'chinese'
         },
-        auto2top: true, // 切换页面后是否自动跳转到页面顶部
+        // 切换页面后是否自动跳转到页面顶部
+        auto2top: true,
         //代码一键复制
         copyCode: {
             buttonText: '复制',
@@ -201,7 +193,8 @@
         loadNavbar: true,
         coverpage: true,
         onlyCover: true,
-        alias: { // 定义路由别名，可以更自由的定义路由规则。 支持正则
+        alias: {
+            // 定义路由别名，可以更自由的定义路由规则。 支持正则
             '/.*/_sidebar.md': '/_sidebar.md',//防止意外回退
             '/.*/_navbar.md': '/_navbar.md'
         },
@@ -220,12 +213,6 @@
 
         markdown: {
             smartypants: true,
-            // renderer: {
-            //     link: function () {
-            //         // ...
-            //     },
-            // },
-            // function
             markdown: function (marked, renderer) {
                 // ...
                 return marked;
@@ -241,26 +228,6 @@
         plantuml: {
             skin: 'default',
         },
-        // plugins: [
-        //     EditOnGithubPlugin.create('https://github.com/vchickenTao/java-demo/master/'),
-        //     // footer
-        //     function(hook) {
-        //         var ad = '';
-        //
-        //         var footer = [
-        //             '<hr/>',
-        //             '<footer>',
-        //             '<span><a href="https://beian.miit.gov.cn" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">蒙ICP备19001663号</a><br/>&copy; 2021 Hutool Project. All Rights Reserved.</span>',
-        //             '<span><a href="https://docsify.js.org" target="_blank">Powered by docsify</a></span>',
-        //             '</footer>'
-        //         ].join('');
-        //         footer='';
-        //
-        //         hook.afterEach(function(html) {
-        //             return ad + html + footer;
-        //         });
-        //     }
-        // ],
         executeScript: true,
         mergeNavbar: true,
         formatUpdated: "更新于{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}",
@@ -278,7 +245,7 @@
                     var footer = [
                         '<hr/>',
                         '<footer>',
-                        '<span><a href="https://github.com/vchickenTao">@vchicken</a> &copy;2022.</span>',
+                        '<span><a href="https://github.com/vchickenTao/repsitory">@vchicken</a> &copy;2022.</span>',
                         '<span>  {docsify-updated}</span>',
                         '<span style="margin-left: 10px;"><a href="https://docsify.js.org" target="_blank">Powered by docsify</a></span>',
                         '</footer>'
@@ -334,7 +301,7 @@
     const gitalk = new Gitalk({
         clientID: 'Github Application Client ID',
         clientSecret: 'Github Application Client Secret',
-        repo: 'Github repo',
+        repo: 'https://github.com/vchickenTao/repsitory',
         owner: 'Github repo owner',
         admin: ['Github repo collaborators, only these guys can initialize github issues'],
         // facebook-like distraction free mode
@@ -365,7 +332,6 @@
 <script src="https://unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
 <!--主题-->
 <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-
 <!--卜蒜子访问统计-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- pdf-->
@@ -375,7 +341,6 @@
 <script src="path-to-file/docsify-pdf-embed.js"></script>
 <!-- or use this if you are not hosting the file yourself -->
 <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
-
 <!--  Tip-->
 <!-- Latest -->
 <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
@@ -393,7 +358,6 @@
 <script src="http://vchicken.cn/note/static/js/jquery-migrate.min.js"></script>
 <script src="static/js/jquery-ui.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
-
 <script>
     $(function () {
         let href = localStorage.getItem('href') || "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
