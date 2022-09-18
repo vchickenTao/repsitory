@@ -14,11 +14,45 @@
     <!-- 暗黑主题插件样式 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" id="dark">
     <link rel="stylesheet" href="static/css/code.css">
+    <link rel="stylesheet" href="static/css/iconfont.css">
 
     <style>
         :root {
             --docsifytabs-border-color: #ededed;
             --docsifytabs-tab-highlight-color: green;
+        }
+
+        /*加重描述strong*/
+        .markdown-section strong {
+            color: rgb(239, 112, 96);
+        }
+
+        .app-nav {
+            position: fixed;
+            margin: 0;
+            /*padding: 10px 50px 10px 0;*/
+            padding: 10px 0 10px 0; /*上、右、下、左*/
+            width: calc(100% - 325px);
+            background-color: #fff;
+            height: 55px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .markdown-section code {
+            border-radius: 2px;
+            font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            font-size: 16px !important;
+            margin: 0 2px;
+            padding: 3px 5px;
+            white-space: nowrap;
+        }
+
+        .markdown-section > div > img, .markdown-section pre {
+            box-shadow: 2px 2px 20px 6px rgb(255, 255, 255) !important;
+        }
+
+        .markdown-section a:not(:hover) {
+            text-decoration: none;
         }
 
 
@@ -27,8 +61,12 @@
 
         }
 
-        .app-nav{
-            color: #34495e!important;
+        table tr td::before {
+            content: '' !important;
+        }
+
+        .app-nav {
+            color: #34495e !important;
         }
 
         .drag-me {
@@ -66,15 +104,6 @@
             cursor: -moz-grabbing;
         }
 
-        .drag-me:before {
-            /*content: '.';*/
-            /*position: absolute;*/
-            /*left: 14px;*/
-            /*font-size: 20px;*/
-            /*line-height: 20px;*/
-            /*color: #ac14c2;*/
-            /*text-shadow: 0 5px #ac14c2, 0 10px #ac14c2, 5px 0 #ac14c2, 5px 5px #ac14c2, 5px 10px #ac14c2, 10px 0 #ac14c2, 10px 5px #ac14c2, 10px 10px #ac14c2;*/
-        }
 
         .drag-me span {
             color: #ffffff;
@@ -83,6 +112,7 @@
 
 
         #docsify-darklight-theme {
+            /*position: fixed;*/
             top: 0px;
         }
 
@@ -94,11 +124,11 @@
         }
 
         .scroll-to-top {
-            background: #42b983!important;
-            border-radius: 20%!important;
-            width: 40px!important;
-            height: 40px!important;
-            line-height: 37px!important;
+            background: #42b983 !important;
+            border-radius: 20% !important;
+            width: 40px !important;
+            height: 40px !important;
+            line-height: 37px !important;
         }
 
         .markdown-section code, .markdown-section output:after, .markdown-section pre {
@@ -123,6 +153,7 @@
             background-position: 10px 15px;
         }
     </style>
+
     <style type="text/css">
         ::-webkit-scrollbar {
             width: 10px; /*对垂直流动条有效*/
@@ -162,7 +193,7 @@
 <script>
     window.$docsify = {
         name: '🐕 <span style="font-size: 22px!important;font-weight: bold;font-family: Droid Sans">Java从入门到放弃</span>',
-        repo: 'https://github.com/vchickenTao',
+        // repo: 'https://github.com/vchickenTao',
         search: {
             maxAge: 86400000,
             paths: 'auto',
