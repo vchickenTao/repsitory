@@ -9,13 +9,13 @@
   * [🌈 **前端学习**](front/first)
   * [💻 **项目实战**](project/first)
   * [🎥 **项目部署**](deploy/first)
-  * [👨‍💻 **面试准备**](interview/first)
   * [📌 **常用工具**](tools/first)
   * [📝 **零碎问题随记**](question/first)
   * [🧑 ‍**联系作者**](person/me)
   * [💬 **微信联系**](person/wechat)
   * [⌛ **持续更新中...**](person/continue)
 
+- [📚 面试宝典](http://vchicken.cn/interview)
 - 🧰开发必备
   - [**在线ASCII码表**](http://www.fly63.com/tool/ascii/)
   - [**正则表达式调试工具**](https://regexr.com/)
