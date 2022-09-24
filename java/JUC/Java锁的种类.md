@@ -49,7 +49,7 @@ private AtomicInteger atomicInteger = new AtomicInteger();  // 需要保证多�
 atomicInteger.incrementAndGet(); //执行自增1
 ```
 
-通过调用方式示例，我们可以发现悲观锁基本都是在显式的锁定之后再操作同步资源，而乐观锁则直接去操作同步资源。那么，为何乐观锁能够做到不锁定同步资源也可以正确的实现线程同步呢？具体可以参看[JUC原子类: CAS, Unsafe和原子类详解]()。
+通过调用方式示例，我们可以发现悲观锁基本都是在显式的锁定之后再操作同步资源，而乐观锁则直接去操作同步资源。那么，为何乐观锁能够做到不锁定同步资源也可以正确的实现线程同步呢？具体可以参看[JUC原子类 CAS,Unsafe和原子类详解](java/JUC/CAS,Unsafe和原子类详解)。
 
 ### 2.自旋锁 VS 适应性自旋锁
 
@@ -68,7 +68,7 @@ atomicInteger.incrementAndGet(); //执行自增1
 
 自旋锁的实现原理同样也是CAS，AtomicInteger中调用unsafe进行自增操作的源码中的do-while循环就是一个自旋操作，如果修改数值失败则通过循环来执行自旋，直至修改成功。
 
-自旋锁相关可以看[关键字 - synchronized详解 - 自旋锁与自适应自旋锁  (opens new window)](https://pdai.tech/md/java/thread/java-thread-x-key-synchronized.html#自旋锁与自适应自旋锁)
+自旋锁相关可以看[关键字 - synchronized详解 - 自旋锁与自适应自旋锁](java/JUC/synchronized详解?id=自旋锁与自适应自旋锁)
 
 ### 3. 无锁 VS 偏向锁 VS 轻量级锁 VS 重量级锁
 
@@ -78,7 +78,7 @@ atomicInteger.incrementAndGet(); //执行自增1
 
 ![无锁 VS 偏向锁 VS 轻量级锁 VS 重量级锁](https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-09-02/0fbd39a5-882e-40d0-9b7a-a66bcc1989d1.png)
 
-相关可以看[关键字 - synchronized详解 - 锁的类型  (opens new window)](https://pdai.tech/md/java/thread/java-thread-x-key-synchronized.html#锁的类型)
+相关可以看[关键字 - synchronized详解 - 锁的类型](java/JUC/synchronized详解?id=锁的类型)
 
 ### 4. 公平锁 VS 非公平锁
 
@@ -97,7 +97,7 @@ atomicInteger.incrementAndGet(); //执行自增1
 ![](https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-09-02/3aa09344-de8b-48a0-8479-dfef3f73407a.png)
 
 
-更多请参看[JUC - ReentrantLock详解  (opens new window)](https://pdai.tech/md/java/thread/java-thread-x-lock-ReentrantLock.html)。
+更多请参看[JUC - ReentrantLock详解](java/JUC/JUC锁详解?id=juc锁-reentrantlock详解)。
 
 ### 5. 可重入锁 VS 非可重入锁
 
@@ -145,10 +145,7 @@ public class Widget {
 
 更多请参看：
 
-- [JUC锁: LockSupport详解]()
-- [JUC锁: AbstractQueuedSynchonizer详解]()
-- [JUC锁 - ReentrantLock详解  (opens new window)](https://pdai.tech/md/java/thread/java-thread-x-lock-ReentrantLock.html)。
-- [关键字 - synchronized详解  (opens new window)](https://pdai.tech/md/java/thread/java-thread-x-key-synchronized.html)
+- [JUC锁详解](java/JUC/JUC锁详解)
 
 ### 6. 独享锁(排他锁) VS 共享锁
 
@@ -171,7 +168,7 @@ public class Widget {
 
 更多请参看
 
-- [JUC锁: ReentrantReadWriteLock详解  (opens new window)](https://pdai.tech/md/java/thread/java-thread-x-lock-ReentrantReadWriteLock.html)
+- [JUC锁: ReentrantReadWriteLock详解](java/JUC/JUC锁详解?id=juc锁-reentrantreadwritelock详解)
 
 ### 结语
 

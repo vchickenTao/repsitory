@@ -1,9 +1,9 @@
 # 💻 计算机基础
 
-## 操作系统基础
+## 🎨 操作系统基础
   - [操作系统基础](computer/操作系统基础)
 
-## 网络基础
+## ⏳ 网络基础
   - [计算机网络基础](computer/计算机网络基础)
   - [网络编程](computer/网络编程)
 
@@ -11,12 +11,12 @@
 
 # 📓 Java基础
 
-## 面向对象及基础
+## 🍵 面向对象及基础
 
    - [结构与目录](java/面向对象及基础/first)
 
 
-## IO框架
+## ☕ IO框架
    - [结构与目录](java/IO/first)
    - [Java IO - 分类](java/IO/IO分类)
    - [Java IO - 设计模式](java/IO/设计模式)
@@ -32,7 +32,7 @@
    - [Java IO - 零拷贝实现](java/IO/零拷贝实现)
 
 
-## 并发框架
+## ⏰ 并发框架
    - [结构与目录](java/JUC/first)
    - Java并发
        - [Java并发 - 理论基础](java/JUC/并发理论基础)
@@ -51,7 +51,7 @@
        - [JUC线程池 - FutureTask等详解](java/JUC/JUC线程池详解)
        - [JUC工具类 - CountDownLatch等详解](java/JUC/JUC工具类详解)
 
-## 集合框架
+## 🥉 集合框架
    - [结构与目录](java/集合/first)
    - [概述](java/集合/概述)
    - [容器中的设计模式](java/集合/容器中的设计模式)
@@ -65,9 +65,9 @@
       - [LinkedHashSet&Map](java/集合/LinkedHashSet&Map源码解析)
       - [TreeSet&TreeMap](java/集合/TreeSet&TreeMap源码解析)
       - [WeakHashMap](java/集合/WeakHashMap源码解析)
-      - [Java集合使用注意事项总结](java/集合/Java集合使用注意事项总结)
+   - [Java集合使用注意事项总结](java/集合/Java集合使用注意事项总结)
 
-## Java虚拟机(JVM)
+## 🐯 Java虚拟机(JVM)
    - [结构和目录](java/JVM/first)
    - JVM 基础
        - [JVM 基础 - 类字节码详解](java/JVM/类字节码详解)
@@ -93,13 +93,33 @@
        - [调试排错 - Java问题排查之使用IDEA本地调试和远程调试](java/JVM/Java问题排查之使用IDEA本地调试和远程调试)
        - [调试排错 - Java动态调试技术原理](java/JVM/Java动态调试技术原理)
 
-## Java版本特性
+## 🐼 Java版本特性
+   - Java8 新特性
+     - [Java8 - Lambda表达式](java/新特性/Java8/Lambda表达式)
+     - [Java8 - 函数式接口](java/新特性/Java8/函数式接口)
+     - [Java8 - 方法引用](java/新特性/Java8/方法引用)
+     - [Java8 - 默认方法](java/新特性/Java8/默认方法)
+     - [Java8 - 新增注解](java/新特性/Java8/新增注解)
+     - [Java8 - Optional类](java/新特性/Java8/Optional类)
+     - [Java8 - Stream API](java/新特性/Java8/StreamAPI)
+     - [Java8 - DateTime API](java/新特性/Java8/DateTimeAPI)
+     - [Java8 - JavaFx 2.0](java/新特性/Java8/JavaFx2)
+     - [Java8 - 其他更新](java/新特性/Java8/其他更新)
+   - [Java9 新特性](java/新特性/Java9)
+   - [Java10 新特性](java/新特性/Java10)
+   - [Java11 新特性](java/新特性/Java11)
+   - [Java12 新特性](java/新特性/Java12)
+   - [Java13 新特性](java/新特性/Java13)
+   - [Java14 新特性](java/新特性/Java14)
+   - [Java15 新特性](java/新特性/Java15)
+   - [Java16 新特性](java/新特性/Java16)
+   - [Java17 新特性](java/新特性/Java17)
 
 ---
 
 # [🧮 **数据结构与算法**](structures/first)
 
-## 数据结构基础
+## 🚀 数据结构基础
    - [结构与目录](structures/数据结构基础/first)     
    - 线性结构
      - [数组](structures/数据结构基础/数组)
@@ -129,9 +149,9 @@
      - [Kruskal算法](structures/数据结构基础/Kruskal算法)
      - [Prim算法](structures/数据结构基础/Prim算法)
 
-## [算法基础](structures/算法基础)
+## 🎉 [算法基础](structures/算法基础)
 
-## LeetCode题解
+## 🐝 LeetCode题解
    - [结构与目录](structures/LeetCode题解/first)
         - [前言](structures/LeetCode题解/前言)
         - 数据结构
@@ -158,13 +178,13 @@
 
 # [💾 **数据库**](database/first)
 
-## 数据库基础和原理
+## 🐺 数据库基础和原理
    - [结构与目录](database/数据库基础和原理/first)
    - [数据库系统基础知识](database/数据库基础和原理/数据库系统基础知识)
    - [关系数据库设计理论](database/数据库基础和原理/关系数据库设计理论)
    - [E-R图](database/数据库基础和原理/E-R图)
 
-## SQL数据库
+## 📑 SQL数据库
    - [结构与目录](database/SQL数据库)
    - [MySQL](database/MySQL/first)
      - MySQL快速入门基础
@@ -179,7 +199,7 @@
         - [MySQL - 日志与备份篇](database/MySQL/MySQL日志与备份篇)
   - [Oracle](database/Oracle)
 
-## NOSQL数据库
+## 💡 NOSQL数据库
    - [结构与目录](database/NOSQL数据库)
    - [Redis](database/Redis)
    - [MongoDB](database/MongoDB)
@@ -189,13 +209,13 @@
 
 # [🍉 **系统框架**](frame/first)
 
-## Spring
+## ❤ Spring
    - [Spring](frame/Spring)
 
-## SpringMVC
+## 🧡 SpringMVC
    - [SpringMVC](frame/SpringMVC)
 
-## SpringBoot
+## 💖 SpringBoot
    - Springboot入门
        - [Springboot入门 - 初识SpringBoot](frame/Springboot/初识SpringBoot)
        - [Springboot入门 - HelloWorld](frame/Springboot/HelloWorld)
@@ -205,29 +225,29 @@
      - [Springboot核心功能 - 配置文件](frame/Springboot/配置文件)
      - [Springboot核心功能 - Web开发](frame/Springboot/Web开发)
 
-## SpringCloud
+## ❤️‍🔥 SpringCloud
    - [SpringCloud](frame/SpringCloud)
 
-## Mybatis
+## 💚 Mybatis
    - [Mybatis](frame/Mybatis)
 
-## MybatisPlus
+## 💓 MybatisPlus
    - [MybatisPlus](frame/MybatisPlus)
 
 ---
 
 # [🌉 **中间件**](middleware/first)
 
-## RabbitMQ实战
+## 🐇 RabbitMQ实战
    - [RabbitMQ实战](middleware/RabbitMQ实战)
 
-## Kafka
+## 💥 Kafka
    - [Kafka](middleware/Kafka)
 
-## Zookeeper
+## 🦬 Zookeeper
    - [Zookeeper](middleware/Zookeeper)
 
-## 分库分表框架
+## 🍁 分库分表框架
    - [结构与目录](middleware/分库分表框架)
    - [MyCat](middleware/MyCat)
    - [ShardingSphere](middleware/ShardingSphere)
@@ -236,25 +256,25 @@
 
 # [👨‍🏫 **系统设计**](design/first)
 
-## 系统设计基础
+## 🦀 系统设计基础
    - [系统设计基础](design/系统设计基础)
 
-## 分布式
+## 🦞 分布式
    - [分布式](design/分布式)
 
-## 集群
+## 🦐 集群
    - [集群](design/集群)
 
-## 攻击技术
+## 🦑 攻击技术
    - [攻击技术](design/攻击技术)
 
-## 代码规范
+## 🥕 代码规范
    - [代码规范](design/代码规范)
 
-## JSR303校验
+## 🌱 JSR303校验
    - [JSR303校验](design/JSR303校验)
 
-## 设计模式
+## 🪴 设计模式
    - 设计模式
      - [设计模式知识体系详解](design/设计模式/设计模式知识体系详解)
      - [面向对象七大设计原则](design/设计模式/面向对象七大设计原则)
@@ -287,14 +307,14 @@
 ---
 
 # [🌈 **前端学习**](front/first)
-## [前端基础](front/前端基础)
-## [JQuery](front/JQuery)
-## [Thymeleaf](front/Thymeleaf)
-## [FreeMarker](front/FreeMarker)
-## [Vue](front/Vue)
-## [React](front/React)
-## [Uni-app](front/Uni-app)
-## [nodejs](front/nodejs)
+## [🌲 前端基础](front/前端基础)
+## [🌳 JQuery](front/JQuery)
+## [🌴 Thymeleaf](front/Thymeleaf)
+## [🌵 FreeMarker](front/FreeMarker)
+## [🌾 Vue](front/Vue)
+## [🌿 React](front/React)
+## [☘ Uni-app](front/Uni-app)
+## [🍀 nodejs](front/nodejs)
 
 ---
 
@@ -306,29 +326,29 @@
 ---
 
 # [🎥 **项目部署**](deploy/first)
-## [开发工具](deploy/开发工具)
-## [部署手册和文档](deploy/部署手册和文档)
-## [Git](deploy/Git)
-## [Docker](deploy/Docker学习)
-## [Nginx](deploy/Nginx)
-## [Maven](deploy/Maven)
-## [Jenkins入门](deploy/Jenkins入门)
-## [Kubernetes](deploy/Kubernetes)
+## [🦃 开发工具](deploy/开发工具)
+## [🐔 部署手册和文档](deploy/部署手册和文档)
+## [🐓 Git](deploy/Git)
+## [🐳 Docker](deploy/Docker学习)
+## [🐤 Nginx](deploy/Nginx)
+## [🐧 Maven](deploy/Maven)
+## [🕊 Jenkins入门](deploy/Jenkins入门)
+## [🦉 Kubernetes](deploy/Kubernetes)
 
 ---
 
 # [📌 **常用工具**](tools/first)
 
-## [Linux命令整理](tools/Linux命令整理)
-## [IDEA 快捷键整理](tools/IDEA快捷键整理)
-## [常用在线工具集](tools/常用在线工具集)
-## [正则表达式](tools/正则表达式)
+## [🦅 Linux命令整理](tools/Linux命令整理)
+## [🦤 IDEA 快捷键整理](tools/IDEA快捷键整理)
+## [🦩 常用在线工具集](tools/常用在线工具集)
+## [🦚 正则表达式](tools/正则表达式)
 
 ---
 
 # [📝 **零碎问题随记**](question/first)
 
-  - [遇到的问题](question/遇到的问题)
+  - [🐸 遇到的问题](question/遇到的问题)
 
 ---
 
