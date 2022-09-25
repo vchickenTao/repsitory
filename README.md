@@ -128,7 +128,7 @@
      - [队列](structures/数据结构基础/队列)
    - 树形结构
      - [基础知识和分类](structures/数据结构基础/基础知识和分类)
-     - [二叉搜索树(BST)](structures/数据结构基础/二叉查找树)
+     - [二叉查找树(BST)](structures/数据结构基础/二叉查找树)
      - [平衡二叉树(AVL)](structures/数据结构基础/AVL树)
      - [伸展树](structures/数据结构基础/伸展树)
      - [红黑树(R-B Tree)](structures/数据结构基础/红黑树)
