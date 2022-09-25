@@ -127,11 +127,13 @@
      - [栈](structures/数据结构基础/栈)
      - [队列](structures/数据结构基础/队列)
    - 树形结构
-     - [二叉搜索树(BST)](structures/数据结构基础/二叉树)
+     - [基础知识和分类](structures/数据结构基础/基础知识和分类)
+     - [二叉搜索树(BST)](structures/数据结构基础/二叉查找树)
      - [平衡二叉树(AVL)](structures/数据结构基础/AVL树)
      - [伸展树](structures/数据结构基础/伸展树)
      - [红黑树(R-B Tree)](structures/数据结构基础/红黑树)
-     - [哈夫曼树](structures/数据结构基础/哈夫曼树)
+     - [哈夫曼树(Huffman Tree)](structures/数据结构基础/哈夫曼树)
+     - [前缀树(Trie Tree)](structures/数据结构基础/前缀树)
    - 堆
      - [二叉堆](structures/数据结构基础/二叉堆)
      - [左倾堆](structures/数据结构基础/左倾堆)

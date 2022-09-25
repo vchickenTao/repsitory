@@ -4,11 +4,11 @@
 
 ## 总体介绍
 
-之所以把*TreeSet*和*TreeMap*放在一起讲解，是因为二者在Java里有着相同的实现，前者仅仅是对后者做了一层包装，也就是说***TreeSet里面有一个TreeMap(适配器模式)**。因此本文将重点分析*TreeMap*。
+之所以把`TreeSet`和`TreeMap`放在一起讲解，是因为二者在Java里有着相同的实现，前者仅仅是对后者做了一层包装，也就是说**TreeSet里面有一个TreeMap(适配器模式)**。因此本文将重点分析*TreeMap*。
 
 Java *TreeMap*实现了*SortedMap*接口，也就是说会按照`key`的大小顺序对*Map*中的元素进行排序，`key`大小的评判可以通过其本身的自然顺序(natural ordering)，也可以通过构造时传入的比较器(Comparator)。
 
-***TreeMap底层通过红黑树(Red-Black tree)实现**，也就意味着`containsKey()`, `get()`, `put()`, `remove()`都有着`log(n)`的时间复杂度。其具体算法实现参照了《算法导论》。
+**TreeMap底层通过红黑树(Red-Black tree)实现**，也就意味着`containsKey()`, `get()`, `put()`, `remove()`都有着`log(n)`的时间复杂度。其具体算法实现参照了《算法导论》。
 
 ![TreeMap_base.png](https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-09-10/228d2e6f-c2f6-44d8-821e-6d30d4ac4803_TreeMap_base.png)
 
@@ -29,7 +29,11 @@ SortedMap m = Collections.synchronizedSortedMap(new TreeMap(...));
 
 ## 预备知识
 
-前文说到当查找树的结构发生改变时，红黑树的约束条件可能被破坏，需要通过调整使得查找树重新满足红黑树的约束条件。调整可以分为两类: 一类是颜色调整，即改变某个节点的颜色；另一类是结构调整，集改变检索树的结构关系。结构调整过程包含两个基本操作** : 左旋(Rotate Left)，右旋(RotateRight)**。
+>[!TIP]
+>
+>这里只是初步讲解了红黑树在Java集合中的应用，至于红黑树的原理和作用，可以移步[红黑树(R-B Tree)](structures/数据结构基础/红黑树)一文，进一步深入了解红黑树。
+
+前文说到当查找树的结构发生改变时，红黑树的约束条件可能被破坏，需要通过调整使得查找树重新满足红黑树的约束条件。调整可以分为两类: 一类是颜色调整，即改变某个节点的颜色；另一类是结构调整，集改变检索树的结构关系。结构调整过程包含两个基本操作:` 左旋(Rotate Left)`，`右旋(RotateRight)`。
 
 ### 左旋
 
@@ -376,3 +380,9 @@ public class TreeSet<E> extends AbstractSet<E>
     ......
 }
 ```
+
+
+
+## 参考文章
+
+- [Java 全栈知识体系](https://www.pdai.tech/md/java/collection/java-map-TreeMap&TreeSet.html)
