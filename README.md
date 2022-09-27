@@ -204,6 +204,9 @@
 ## 💡 NOSQL数据库
    - [结构与目录](database/NOSQL数据库)
    - [Redis](database/Redis)
+     - [结构与目录](database/Redis/first)
+     - [Redis入门 - 概念与基础](database/Redis/概念与基础)
+     - [Redis入门 - 单机Redis的安装](database/Redis/单机Redis的安装)
    - [MongoDB](database/MongoDB)
    - [ElasticSearch](database/ElasticSearch)
 
@@ -213,7 +216,7 @@
 
 ## 💝 JavaWeb
    - [JavaWeb](frame/JavaWeb)
-   
+
 ## 💝 Spring
    - [Spring](frame/Spring)
 
