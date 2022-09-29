@@ -240,7 +240,21 @@
    - [Mybatis](frame/Mybatis)
 
 ## 💓 MybatisPlus
-   - [MybatisPlus](frame/MybatisPlus)
+   - [结构与目录](frame/MybatisPlus/first)
+   - [MybatisPlus入门 - 概念与基础](frame/MybatisPlus/MybatisPlus入门-概念与基础)
+   - [MybatisPlus入门 - 快速开始](frame/MybatisPlus/MybatisPlus入门-快速开始)
+   - [MybatisPlus入门 - BaseMapper接口详解](frame/MybatisPlus/BaseMapper接口详解)
+   - [MybatisPlus入门 - 常用的注解](frame/MybatisPlus/BaseMapper接口详解)
+   - [MybatisPlus核心 - 快速使用](frame/MybatisPlus/MybatisPlus快速使用)
+   - [MybatisPlus核心 - 7种条件构造器](frame/MybatisPlus/MybatisPlus的7种条件构造器)
+   - [MybatisPlus核心 - 带条件的CRUD](frame/MybatisPlus/带条件的CRUD)
+   - [MybatisPlus核心 - 全局ID生成策略](frame/MybatisPlus/全局ID生成策略)
+   - [MybatisPlus拓展 - 执行SQL分析打印](frame/MybatisPlus/执行SQL分析打印)
+   - [MybatisPlus拓展 - 分页查询](frame/MybatisPlus/分页查询)
+   - [MybatisPlus拓展 - 乐观锁](frame/MybatisPlus/多数据源配置)
+   - [MybatisPlus拓展 - 二级缓存](frame/MybatisPlus/多数据源配置)
+   - [MybatisPlus拓展 - 多数据源配置](frame/MybatisPlus/多数据源配置)
+   - [MybatisPlus拓展 - 基于字段隔离的多租户](frame/MybatisPlus/基于字段隔离的多租户)
 
 ---
 

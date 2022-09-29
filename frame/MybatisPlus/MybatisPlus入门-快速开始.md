@@ -91,11 +91,11 @@ INSERT INTO user (id, name, age, email) VALUES
         <artifactId>mybatis-plus-boot-starter</artifactId>
         <version>最新版本</version>
     </dependency>
-    <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <scope>runtime</scope>
-    </dependency>
+     <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 </dependencies>
 ```
 
@@ -181,9 +181,11 @@ public class SampleTest {
 控制台输出：
 
 ```log
-User(id=1, name=vchicken, age=18, email=vchicken@163.com)
-User(id=2, name=Jack, age=25, email=jack@163.com)
-User(id=3, name=Tom, age=28, email=tom@qq.com)
+User(id=1, name=Jone, age=18, email=test1@baomidou.com)
+User(id=2, name=Jack, age=20, email=test2@baomidou.com)
+User(id=3, name=Tom, age=28, email=test3@baomidou.com)
+User(id=4, name=Sandy, age=21, email=test4@baomidou.com)
+User(id=5, name=Billie, age=24, email=test5@baomidou.com)
 ```
 
 
