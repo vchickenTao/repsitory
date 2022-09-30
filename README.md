@@ -217,6 +217,14 @@
         - [MySQL - 逻辑架构篇](database/MySQL/MySQL逻辑架构篇)
         - [MySQL - 存储引擎篇](database/MySQL/MySQL存储引擎篇)
         - [MySQL - 索引及调优篇](database/MySQL/MySQL索引及调优篇)
+           - [MySQL索引基础 - 初识索引](database/MySQL/MySQL索引及调优篇/初识索引)
+           - [MySQL索引进阶 - 索引的数据结构](database/MySQL/MySQL索引及调优篇/索引的数据结构)
+           - [MySQL索引进阶 - InnoDB数据存储结构](database/MySQL/MySQL索引及调优篇/InnoDB数据存储结构)
+           - [MySQL索引进阶 - 索引的创建与设计原则](database/MySQL/MySQL索引及调优篇/索引的创建与设计原则)
+           - [MySQL索引进阶 - 性能分析工具的使用](database/MySQL/MySQL索引及调优篇/性能分析工具的使用)
+           - [MySQL索引进阶 - 索引优化与查询优化](database/MySQL/MySQL索引及调优篇/索引优化与查询优化)
+           - [MySQL索引进阶 - 数据库的设计规范](database/MySQL/MySQL索引及调优篇/数据库的设计规范)
+           - [MySQL索引进阶 - 数据库其它调优策略](database/MySQL/MySQL索引及调优篇/数据库其它调优策略)
         - [MySQL - 事务篇](database/MySQL/MySQL事务篇)
         - [MySQL - 日志与备份篇](database/MySQL/MySQL日志与备份篇)
   - [Oracle](database/Oracle)
@@ -293,7 +301,7 @@
    - [结构与目录](middleware/分库分表框架)
    - [MyCat](middleware/MyCat)
    - [ShardingSphere](middleware/ShardingSphere)
-   
+
 ## 🎃 XXL-JOB
    - [XXL-JOB](middleware/XXL-JOB)
 

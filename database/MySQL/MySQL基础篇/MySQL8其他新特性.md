@@ -43,7 +43,7 @@ MySQL从5.7版本直接跳跃发布了8.0版本 ，可见这是一个令人兴�
 
 12. 窗口函数 MySQL 8开始支持窗口函数。在之前的版本中已存在的大部分 聚合函数 在MySQL 8中也可以 作为窗口函数来使用。
 
-![image-20220613202507072](D:/idea/repsitory/database/MySQL/MySQL基础篇.assets/image-20220613202507072.png)
+![image-20220613202507072](MySQL基础篇.assets/image-20220613202507072.png)
 
 13. 正则表达式支持 MySQL在8.0.4以后的版本中采用支持Unicode的国际化组件库实现正则表达式操作， 这种方式不仅能提供完全的Unicode支持，而且是多字节安全编码。MySQL增加了REGEXP_LIKE()、 EGEXP_INSTR()、REGEXP_REPLACE()和 REGEXP_SUBSTR()等函数来提升性能。另外，regexp_stack_limit和 regexp_time_limit 系统变量能够通过匹配引擎来控制资源消耗。
 14. 内部临时表 TempTable存储引擎取代MEMORY存储引擎成为内部临时表的默认存储引擎 。TempTable存储 引擎为VARCHAR和VARBINARY列提供高效存储。internal_tmp_mem_storage_engine会话变量定义了内部 临时表的存储引擎，可选的值有两个，TempTable和MEMORY，其中TempTable为默认的存储引擎。 temptable_max_ram系统配置项定义了TempTable存储引擎可使用的最大内存数量。
@@ -207,7 +207,7 @@ MySQL官方网站窗口函数的网址为https://dev.mysql.com/doc/refman/8.0/en
 
 窗口函数总体上可以分为序号函数、分布函数、前后函数、首尾函数和其他函数，如下表：
 
-![image-20220613210116486](D:/idea/repsitory/database/MySQL/MySQL基础篇.assets/image-20220613210116486.png)
+![image-20220613210116486](MySQL基础篇.assets/image-20220613210116486.png)
 
 ### 3) 语法结构
 
