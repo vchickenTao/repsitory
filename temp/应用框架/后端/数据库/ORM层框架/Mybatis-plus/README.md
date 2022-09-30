@@ -104,16 +104,24 @@ public interface UserMapper extends BaseMapper<User> {
 5. 测试
 
 ```java
+/**
+ * @Description SampleTest
+ * @Author vchicken
+ * @Date 2022/9/29 17:30
+ */
 @SpringBootTest
-class UserMapperTest {
+public class SampleTest {
 
     @Autowired
     private UserMapper userMapper;
 
     @Test
-    void test() {
-        userMapper.selectList(null).forEach(System.out::println);
+    public void testSelect() {
+        System.out.println(("----- selectAll method test ------"));
+        List<User> userList = userMapper.selectList(null);
+        userList.forEach(System.out::println);
     }
+
 }
 ```
 

@@ -152,31 +152,33 @@
      - [Prim算法](structures/数据结构基础/Prim算法)
 
 ## 🎉 [算法基础](structures/算法基础)
+   - [结构与目录](structures/算法基础/first)
+   - [复杂度](structures/算法基础/复杂度)
 
 ## 🐝 LeetCode题解
    - [结构与目录](structures/LeetCode题解/first)
-        - [前言](structures/LeetCode题解/前言)
-        - 数据结构
-          - [链表](structures/LeetCode题解/structure/链表)
-          - [栈和队列](structures/LeetCode题解/structure/栈和队列)
-          - [树](structures/LeetCode题解/structure/树)
-          - [字符串](structures/LeetCode题解/structure/字符串)
-          - [数组与矩阵](structures/LeetCode题解/structure/数组与矩阵)
-          - [哈希表](structures/LeetCode题解/structure/哈希表)
-          - [图](structures/LeetCode题解/structure/图)
-          - [位运算](structures/LeetCode题解/structure/位运算)
-        - 算法思想
-        - 基础算法
-            - [排序](structures/LeetCode题解/arithmetic/排序)
-            - [递归](structures/LeetCode题解/arithmetic/递归)
-            - [贪心思想](structures/LeetCode题解/arithmetic/贪心)
-            - [双指针](structures/LeetCode题解/arithmetic/双指针)
-            - [二分法](structures/LeetCode题解/arithmetic/二分法)
-            - [搜索算法](structures/LeetCode题解/arithmetic/搜索算法)
-            - [分治思想](structures/LeetCode题解/arithmetic/分治思想)
-            - [动态规划](structures/LeetCode题解/arithmetic/动态规划)
-        - 数学方法
-        	- [数学方法](structures/LeetCode题解/arithmetic/数学方法)
+   - [前言](structures/LeetCode题解/前言)
+   - 数据结构
+       - [链表](structures/LeetCode题解/structure/链表)
+       - [栈和队列](structures/LeetCode题解/structure/栈和队列)
+       - [树](structures/LeetCode题解/structure/树)
+       - [字符串](structures/LeetCode题解/structure/字符串)
+       - [数组与矩阵](structures/LeetCode题解/structure/数组与矩阵)
+       - [哈希表](structures/LeetCode题解/structure/哈希表)
+       - [图](structures/LeetCode题解/structure/图)
+       - [位运算](structures/LeetCode题解/structure/位运算)
+   - 算法思想
+     - 基础算法
+        - [排序](structures/LeetCode题解/arithmetic/排序)
+        - [递归](structures/LeetCode题解/arithmetic/递归)
+        - [贪心思想](structures/LeetCode题解/arithmetic/贪心)
+        - [双指针](structures/LeetCode题解/arithmetic/双指针)
+        - [二分法](structures/LeetCode题解/arithmetic/二分法)
+        - [搜索算法](structures/LeetCode题解/arithmetic/搜索算法)
+        - [分治思想](structures/LeetCode题解/arithmetic/分治思想)
+        - [动态规划](structures/LeetCode题解/arithmetic/动态规划)
+     - 数学方法
+        - [数学方法](structures/LeetCode题解/arithmetic/数学方法)
 
 # [💾 **数据库**](database/first)
 
