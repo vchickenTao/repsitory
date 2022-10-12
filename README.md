@@ -48,6 +48,7 @@
        - [关键字 - synchronized详解](java/JUC/synchronized详解)
    - JUC
        - [JUC - 结构说明](java/JUC/结构说明)
+       - [JUC基础 - AQS详解](java/JUC/AQS详解)
        - [JUC原子类 - CAS,Unsafe和原子类详解](java/JUC/CAS,Unsafe和原子类详解)
        - [JUC锁 - ReentrantLock等详解](java/JUC/JUC锁详解)
        - [JUC集合 - ConcurrentHashMap等详解](java/JUC/JUC集合详解)
