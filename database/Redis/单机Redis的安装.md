@@ -1,5 +1,7 @@
 # ⛲ Redis - 单机Redis的安装
 
+---
+
 > [!NOTE]
 >
 > 在经过前面基础概念的学习，我们大致了解了Redis是什么，用来解决什么问题。为了方便后面的学习，我们需要先学习安装下单机版的Redis，至于集群版的Redis，例如，`主从复制`、`一主多从`的集群模式等，我们会在后面的学习中再阐述。Redis的官方建议在Linux环境下安装Redis，而且官网也只提供了基于Linux的安装包，但是在GitHub上提供Windows版本，接下来我们会从**Windows下安装Redis**、**Linux下安装Redis**以及**使用Docker安装Redis**讲解三种最常见的Redis安装方式。初学者不建议使用Docker安装，可以选择前两种方式安装，更有利于入门学习。@vchicken
