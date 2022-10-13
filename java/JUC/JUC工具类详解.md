@@ -696,9 +696,9 @@ CyclicBarrier没有显示继承哪个父类或者实现哪个父接口, 所有AQ
 
 ~~~java
 public class CyclicBarrier {}
-```　　
+~~~
 
-### 类的内部类
+#### 类的内部类
 
 CyclicBarrier类存在一个内部类Generation，每一次使用的CycBarrier可以当成Generation的实例，其源代码如下
 
@@ -706,7 +706,7 @@ CyclicBarrier类存在一个内部类Generation，每一次使用的CycBarrier�
 private static class Generation {
     boolean broken = false;
 }
-~~~
+```
 
 说明: Generation类有一个属性broken，用来表示当前屏障是否被损坏。
 
@@ -1082,6 +1082,165 @@ main continue
 
 注意: 在线程await过程中中断线程会抛出异常，所有进入屏障的线程都将被释放。至于CyclicBarrier的其他用法，读者可以自行查阅API，不再累赘。
 
+
+
+### 拓展：CyclicBarrier模拟起跑发令枪
+
+```java
+/**
+ * @author vchicken
+ * @version 1.0
+ * @description CyclicBarrierTest
+ * @date 2022/10/13 14:36:47
+ */
+public class CyclicBarrierTest {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        //如果将参数改为4，但是下面只加入了3个选手，这永远等待下去
+        //Waits until all parties have invoked await on this barrier.
+        CyclicBarrier barrier = new CyclicBarrier(3);
+
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 10, 2, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2));
+        for (int i = 1; i < 4; i++) {
+            executor.submit(new Thread(new Runner(barrier, i + "号选手")));
+        }
+
+        executor.shutdown();
+    }
+}
+
+class Runner implements Runnable {
+
+    /**
+     * 一个同步辅助类，它允许一组线程互相等待，直到到达某个公共屏障点 (common barrier point)
+     */
+    private CyclicBarrier barrier;
+
+    private String name;
+
+    public Runner(CyclicBarrier barrier, String name) {
+        super();
+        this.barrier = barrier;
+        this.name = name;
+    }
+
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(1000 * (new Random()).nextInt(8));
+            System.out.println(name + " 准备好了...");
+            // barrier的await方法，在所有参与者都已经在此 barrier 上调用 await 方法之前，将一直等待。
+            barrier.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (BrokenBarrierException e) {
+            e.printStackTrace();
+        }
+        System.out.println(name + " 起跑！");
+    }
+}
+```
+
+执行结果：
+
+```java
+3号选手 准备好了...
+2号选手 准备好了...
+1号选手 准备好了...
+1号选手 起跑！
+3号选手 起跑！
+2号选手 起跑！
+```
+
+- 等到最后一个选手准备好了，就可以起跑了
+- 那么如果我们有6位选手，但是CyclicBarrier的parties仍然为3，即发令枪只要3个人准备好了就发枪，那么会怎么样呢？我们看下面的的代码：
+
+```java
+ public static void main(String[] args) throws IOException, InterruptedException {
+        //如果将参数改为4，但是下面只加入了3个选手，这永远等待下去
+        //Waits until all parties have invoked await on this barrier.
+        CyclicBarrier barrier = new CyclicBarrier(3);
+
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 10, 2, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2));
+        for (int i = 1; i < 7; i++) {
+            executor.submit(new Thread(new Runner(barrier, i + "号选手")));
+        }
+
+        executor.shutdown();
+    }
+```
+
+执行结果：
+
+```java
+1号选手 准备好了...
+3号选手 准备好了...
+2号选手 准备好了...
+2号选手 起跑！
+1号选手 起跑！
+3号选手 起跑！
+6号选手 准备好了...
+5号选手 准备好了...
+4号选手 准备好了...
+4号选手 起跑！
+6号选手 起跑！
+5号选手 起跑！
+```
+
+- 因此我们可以看出CyclicBarrier的一个重要特点，那就是可以重复，只要3个人准备好了，随即发枪，剩下的人等待下一轮发枪。值得注意的是，如果任意一轮只要准备完成的人数不满3人，那么就会一直处于等待状态。
+
+- 如果想要防止等待过久，我们可以设置线程的等待超时时间，一旦超时，则不再等待，直接发枪。
+
+  ```java
+   @Override
+      public void run() {
+          try {
+              Thread.sleep(1000 * (new Random()).nextInt(8));
+              System.out.println(name + " 准备好了...");
+              // barrier的await方法，在所有参与者都已经在此 barrier 上调用 await 方法之前，将一直等待。
+              barrier.await(30,TimeUnit.SECONDS);// 等待30秒
+          } catch (InterruptedException e) {
+              e.printStackTrace();
+          } catch (BrokenBarrierException e) {
+              e.printStackTrace();
+          } catch (TimeoutException e) {
+              e.printStackTrace();
+          }
+          System.out.println(name + " 起跑！");
+      }
+  ```
+
+  执行结果：
+
+  ```java
+  3号选手 准备好了...
+  1号选手 准备好了...
+  6号选手 准备好了...
+  6号选手 起跑！
+  1号选手 起跑！
+  3号选手 起跑！
+  7号选手 准备好了...
+  2号选手 准备好了...
+  4号选手 准备好了...
+  5号选手 准备好了...
+  4号选手 起跑！
+  2号选手 起跑！
+  7号选手 起跑！
+  java.util.concurrent.TimeoutException
+  	at java.util.concurrent.CyclicBarrier.dowait(CyclicBarrier.java:257)
+  	at java.util.concurrent.CyclicBarrier.await(CyclicBarrier.java:435)
+  	at com.vchicken.java.juc.Runner.run(CyclicBarrierTest.java:50)
+  	at java.lang.Thread.run(Thread.java:748)
+  	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+  	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+  	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  	at java.lang.Thread.run(Thread.java:748)
+  5号选手 起跑！
+  ```
+
+  
+
 ### 和CountDonwLatch再对比
 
 - CountDownLatch减计数，CyclicBarrier加计数。
@@ -1109,6 +1268,14 @@ main continue
 ## JUC工具类: Semaphore详解
 
 ---
+
+### 什么是Semaphore
+
+`Semaphore(信号量)`，是`JUC`包下的一个工具类，我们可以通过其限制执行的线程数量，达到限流的效果。
+
+当一个线程执行时先通过其方法进行获取许可操作，获取到许可的线程继续执行业务逻辑，当线程执行完成后进行释放许可操作，未获取达到许可的线程进行等待或者直接结束。
+
+
 
 ### Semaphore源码分析
 
@@ -1379,7 +1546,7 @@ public class SemaphoreDemo {
 
 运行结果(某一次):
 
-```html
+```java
 main trying to acquire
 main acquire successfully
 t1 trying to acquire
