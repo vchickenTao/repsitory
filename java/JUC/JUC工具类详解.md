@@ -570,6 +570,97 @@ public class T3 {
 
 
 
+### 拓展：使用CountDownLatch实现发令枪测试
+
+发令枪可以用来模拟短时间内大量的并发请求，其中就是通过CountDownLatch来实现的。
+
+```java
+/**
+ * 单例模式，发令枪测试单例创建
+ *  * 1、修改发令枪数量
+ *  * 2、修改doWork 方法内容即可使用
+ *
+ * @author vchicken
+ * @version 1.0
+ * @description CountDownLatchTest2
+ * @date 2022/10/13 9:25:38
+ */
+public class CountDownLatchTest {
+
+    /**
+     * TODO 发令枪数量设置
+     */
+    private static final int N = 20;
+
+    public void index() {
+        //发令枪测试
+        CountDownLatch doneSignal = new CountDownLatch(N);
+        //核心线程数
+        int corePoolSize = 3;
+        //最大线程数
+        int maximumPoolSize = N;
+        //超过 corePoolSize 线程数量的线程最大空闲时间
+        long keepAliveTime = 2;
+        //以秒为时间单位
+        TimeUnit unit = TimeUnit.SECONDS;
+        //创建工作队列，用于存放提交的等待执行任务
+        BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(2);
+        ThreadPoolExecutor threadPoolExecutor = null;
+
+        //创建线程池
+        threadPoolExecutor = new ThreadPoolExecutor(corePoolSize,
+                maximumPoolSize,
+                keepAliveTime,
+                unit,
+                workQueue,
+                new ThreadPoolExecutor.AbortPolicy());
+        for (int i = 0; i < N; ++i)
+        // create and start threads
+        {
+            threadPoolExecutor.execute(new WorkerRunnable(doneSignal, i));
+        }
+
+
+        try {
+            // wait for all to finish
+            doneSignal.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+class WorkerRunnable implements Runnable {
+    private final CountDownLatch doneSignal;
+    private final int i;
+
+    WorkerRunnable(CountDownLatch doneSignal, int i) {
+        this.doneSignal = doneSignal;
+        this.i = i;
+    }
+
+    @Override
+    public void run() {
+        doWork(i);
+        doneSignal.countDown();
+    }
+
+    // TODO 其他业务测试在此方法内修改代码即可
+    void doWork(int i) {
+        System.out.println("当前执行的是：" + i + ", 执行时间是：" + System.currentTimeMillis());
+    }
+
+    public static void main(String[] args) {
+        new CountDownLatchTest().index();
+    }
+}
+```
+
+
+
+
+
 ### 课后问题
 
 - 什么是CountDownLatch?
