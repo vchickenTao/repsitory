@@ -5,7 +5,9 @@
     <title>Java从入门到放弃</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="description" content="Description">
-    <link rel="shortcut icon" href="https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-09-23/bc74cb63-5255-4d81-84b0-5f99f4c2589e_note.png" type="image/x-icon"/>
+    <link rel="shortcut icon"
+          href="https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-09-23/bc74cb63-5255-4d81-84b0-5f99f4c2589e_note.png"
+          type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <!--目录分层收起-->
     <!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />-->
@@ -27,7 +29,7 @@
             color: rgb(239, 112, 96);
         }
 
-        #main li{
+        #main li {
             padding: 0.2rem;
         }
 
@@ -40,6 +42,7 @@
             background-color: #fff;
             height: 55px;
             border-bottom: 1px solid #eee;
+            color: #34495e /*!important*/;
         }
 
         .markdown-section code {
@@ -67,10 +70,6 @@
 
         table tr td::before {
             content: '' !important;
-        }
-
-        .app-nav {
-            color: #34495e !important;
         }
 
         .drag-me {
@@ -116,8 +115,9 @@
 
 
         #docsify-darklight-theme {
-            /*position: fixed;*/
-            top: 0px;
+            position: fixed;
+            top: 70px;
+            right: 30px;
         }
 
 
@@ -156,13 +156,12 @@
             background-repeat: no-repeat;
             background-position: 10px 15px;
         }
-        hr{
+
+        hr {
             height: 2px;
             background: #3eaf7c;
         }
-    </style>
 
-    <style type="text/css">
         ::-webkit-scrollbar {
             width: 10px; /*对垂直流动条有效*/
             height: 10px; /*对水平流动条有效*/
@@ -192,6 +191,7 @@
             display: none;
         }
     </style>
+
 </head>
 <body>
 <!--<div class="drag-me" title="点击切换主题">-->
@@ -401,73 +401,97 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 <script>
     $(function () {
-        let href = localStorage.getItem('href') || "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
-        let background = localStorage.getItem('background') || "mediumspringgreen";
-        let color = localStorage.getItem('color') || "#ffffff";
-        if (href) {
-            $('#thyme').attr("href", href)
-            if (background) {
-                $('.drag-me').css("background", background);
-            }
+        // let href = localStorage.getItem('href') || "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
+        // let background = localStorage.getItem('background') || "mediumspringgreen";
+        // let color = localStorage.getItem('color') || "#ffffff";
+        // if (href) {
+        //     $('#thyme').attr("href", href)
+        //     if (background) {
+        //         $('.drag-me').css("background", background);
+        //     }
+        //     if (color) {
+        //         $('.drag-me span').css("color", color)
+        //     }
+        // } else {
+        //     $('#thyme').attr("href", "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css")
+        //     $('.drag-me').css("background", "mediumspringgreen")
+        //     $('.drag-me span').css("color", "#ffffff")
+        // }
+        // $(".drag-me").draggable();
+
+        $(function () {
+            setTimeout(()=>{
+                changeNav();
+            },50)
+        })
+
+        $('.themeable').click(() => {
+            changeNav();
+        })
+
+        const changeNav = () => {
+            var doc = document.getElementsByClassName('themeable')[0];
+            var color = window.getComputedStyle(doc, null)['color-scheme'];
             if (color) {
-                $('.drag-me span').css("color", color)
-            }
-        } else {
-            $('#thyme').attr("href", "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css")
-            $('.drag-me').css("background", "mediumspringgreen")
-            $('.drag-me span').css("color", "#ffffff")
-        }
-        $(".drag-me").draggable();
-
-        let flag = true;
-
-        $('.drag-me').click(function () {
-            if (!flag) {
-                return false;
-            }
-            flag = false;
-            // $('#dark').removeAttr("href")
-            let random = Math.round(Math.random() * 10);
-            let href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
-            let background = "mediumspringgreen";
-            let color = "#ffffff";
-            if (random >= 0 && random < 3) {
-                href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css";
-                background = "steelblue";
-            } else if (3 <= random && random < 5) {
-                href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css";
-                background = "dodgerblue";
-            } else if (5 <= random && random < 7) {
-                href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css";
-                background = "dodgerblue";
-            } else {
-                let random1 = Math.round(Math.random() * 10);
-                if (random1 <= 6) {
-                    href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
-                } else {
-                    if (random1 === 7) {
-                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/pure.css";
-                        background = "black";
-                    } else if (random1 === 8) {
-                        background = "indianred";
-                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css";
-                    } else if (random1 === 9) {
-                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/buble.css";
-                        background = "dodgerblue";
-                    } else {
-                        href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dolphin.css";
-                        background = "skyblue"
-                    }
+                if (color === 'light') {
+                    $('.app-nav').css('background-color', '#fff');
+                    $('.app-nav').css('color', '#34495e !important');
+                } else if (color === 'dark') {
+                    $('.app-nav').css('background-color', '#333333');
+                    $('.app-nav').css('color', '#42b983 !important');
                 }
             }
-            $('#thyme').attr("href", href)
-            $('.drag-me').css("background", background);
-            $('.drag-me span').css("color", color)
-            localStorage.setItem('href', href);
-            localStorage.setItem('background', background);
-            localStorage.setItem('color', color);
-            flag = true;
-        })
+        }
+
+        // let flag = true;
+        //
+        // $('.drag-me').click(function () {
+        //     if (!flag) {
+        //         return false;
+        //     }
+        //     flag = false;
+        //     // $('#dark').removeAttr("href")
+        //     let random = Math.round(Math.random() * 10);
+        //     let href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
+        //     let background = "mediumspringgreen";
+        //     let color = "#ffffff";
+        //     if (random >= 0 && random < 3) {
+        //         href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css";
+        //         background = "steelblue";
+        //     } else if (3 <= random && random < 5) {
+        //         href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css";
+        //         background = "dodgerblue";
+        //     } else if (5 <= random && random < 7) {
+        //         href = "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css";
+        //         background = "dodgerblue";
+        //     } else {
+        //         let random1 = Math.round(Math.random() * 10);
+        //         if (random1 <= 6) {
+        //             href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css";
+        //         } else {
+        //             if (random1 === 7) {
+        //                 href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/pure.css";
+        //                 background = "black";
+        //             } else if (random1 === 8) {
+        //                 background = "indianred";
+        //                 href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css";
+        //             } else if (random1 === 9) {
+        //                 href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/buble.css";
+        //                 background = "dodgerblue";
+        //             } else {
+        //                 href = "//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dolphin.css";
+        //                 background = "skyblue"
+        //             }
+        //         }
+        //     }
+        //     $('#thyme').attr("href", href)
+        //     $('.drag-me').css("background", background);
+        //     $('.drag-me span').css("color", color)
+        //     localStorage.setItem('href', href);
+        //     localStorage.setItem('background', background);
+        //     localStorage.setItem('color', color);
+        //     flag = true;
+        // })
     });
 </script>
 </body>
