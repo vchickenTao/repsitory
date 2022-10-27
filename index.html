@@ -420,9 +420,13 @@
         // $(".drag-me").draggable();
 
         $(function () {
-            setTimeout(()=>{
+            setTimeout(() => {
                 changeNav();
-            },50)
+            }, 50)
+        })
+
+        $('.sidebar-toggle').click(() => {
+            changeReady();
         })
 
         $('.themeable').click(() => {
@@ -430,8 +434,8 @@
         })
 
         const changeNav = () => {
-            var doc = document.getElementsByClassName('themeable')[0];
-            var color = window.getComputedStyle(doc, null)['color-scheme'];
+            let doc = document.getElementsByClassName('themeable')[0];
+            let color = window.getComputedStyle(doc, null)['color-scheme'];
             if (color) {
                 if (color === 'light') {
                     $('.app-nav').css('background-color', '#fff');
@@ -440,6 +444,17 @@
                     $('.app-nav').css('background-color', '#333333');
                     $('.app-nav').css('color', '#42b983 !important');
                 }
+            }
+        }
+
+        const changeReady = () => {
+            let doc = document.getElementsByClassName('close')[0];
+            if (doc) {
+                // 侧边栏关闭
+               $('.app-nav').css('width','100%');
+            }else {
+                // 侧边栏打开
+                $('.app-nav').css('width','calc(100% - 325px)');
             }
         }
 
