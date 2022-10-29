@@ -14,7 +14,9 @@
  - 通过一个类的全限定名来获取其定义的二进制字节流。 
  - 将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。 
  - 在Java堆中生成一个代表这个类的java.lang.Class对象，作为对方法区中这些数据的访问入口。
+
    ![](https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-08-09/9108e69f-7e8c-419f-8040-abf95436e902.png)
+   
    相对于类加载的其他阶段而言，加载阶段(准确地说，是加载阶段获取类的二进制字节流的动作)是可控性最强的阶段，因为开发人员既可以使用系统提供的类加载器来完成加载，也可以自定义自己的类加载器来完成加载。 
    加载阶段完成后，虚拟机外部的 二进制字节流就按照虚拟机所需的格式存储在方法区之中，而且在Java堆中也创建一个java.lang.Class类的对象，这样便可以通过该对象访问方法区中的这些数据。 
    类加载器并不需要等到某个类被“首次主动使用”时再加载它，JVM规范允许类加载器在预料某个类将要被使用时就预先加载它，如果在预先加载的过程中遇到了.class文件缺失或存在错误，类加载器必须在程序首次主动使用该类时才报告错误(LinkageError错误)如果这个类一直没有被程序主动使用，那么类加载器就不会报告错误。
@@ -337,6 +339,129 @@ sun.misc.Launcher$AppClassLoader@18b4aac2
 1、这里传递的文件名需要是类的`全限定性名称`，即com.vchicken.jvm.Test2格式的，因为 defineClass 方法是按这种格式进行处理的。 
 2、最好不要重写loadClass方法，因为这样容易破坏双亲委托模式。 
 3、这类Test 类本身可以被 AppClassLoader 类加载，因此我们不能把com/vchicken/jvm/Test2.class 放在类路径下。否则，由于双亲委托机制的存在，会直接导致该类由 AppClassLoader 加载，而不会通过我们自定义类加载器来加载。
+
+
+
+## 补充：Java类中的加载顺序
+
+> [!TIP]
+>
+> 这个问题是面试题中经常出现的，在实际代码编写中也会用到，如果在调用中，违背了加载顺序，也会导致程序的异常。@vchicken
+
+### 代码示例
+
+测试代码：
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        new Test2();
+    }
+}
+```
+
+子类代码：
+
+```java
+public class Test2 extends Test3{
+    {
+        System.out.println("子类代码块");
+    }
+    private String address = getAddress();
+    
+    static{
+        System.out.println("子类静态代码块");
+    }
+    private static String name = get1Name();
+    
+    
+    public Test2() {
+        System.out.println("子类构造方法");
+    }
+    
+    private String getAddress() {
+        System.out.println("子类成员变量");
+        return null;
+    }
+
+    private static String get1Name() {
+        System.out.println("子类静态变量");
+        return null;
+    }   
+}
+```
+
+父类代码：
+
+```java
+public class Test3 {
+    private static String name = getName();
+    
+    private String address = getAddress();
+    
+    static{
+        System.out.println("父类静态代码块");
+    }
+    
+    {
+        System.out.println("父类代码块");
+    }
+    
+    public Test3() {
+        System.out.println("父类构造函数");
+    }
+    
+    private String getAddress() {
+        System.out.println("父类成员变量");
+        return null;
+    }
+
+    private static String getName() {
+        System.out.println("父类静态变量");
+        return null;
+    }
+}
+```
+
+执行结果
+
+```java
+// 有父类的情况
+父类静态变量
+父类静态代码块
+子类静态代码块
+子类静态变量
+父类成员变量
+父类代码块
+父类构造函数
+子类代码块
+子类成员变量
+子类构造方法
+    
+// 无父类的情况
+子类静态代码块
+子类静态变量
+子类代码块
+子类成员变量
+子类构造方法
+```
+
+**多次调换代码先后顺序，发现 变量和代码块的加载顺序和在代码中的先后顺序有关。**
+
+### 结论
+
+- 无父类情况下，加载顺序为：
+
+> [!ATTENTION]
+>
+> 静态成员变量、静态代码块 ==> 成员变量、代码块 ===> 构造方法
+
+- 有父类情况下，加载顺序为：
+
+> [!ATTENTION]
+>
+> 父类静态成员变量、父类静态代码块 ==> 子类静态成员变量、子类静态代码块  ==> 父类成员变量、父类代码块
+>   ==>  父类构造方法  ==>  子类成员变量、子类代码块  ==> 子类构造方法。
 
 
 
