@@ -626,7 +626,7 @@ public class OrderService$$EnhancerByCGLIB$$ba8463fa extends OrderService implem
 
 关于cglib更详细的介绍并不是这里的重点，后面我会抽时间细致学习学习做个笔记出来。不过这里还是要多提几句。
 
-当调用代理类的`query()`方法时，会寻找该`query()`方法上有没有被绑定拦截器(比如说编写代码时实现的`MethodInterceptor`接口)，没有的话则不需要代理。JDK动态代理的拦截对象是通过反射的机制来调用被拦截方法的，反射的效率较低，cglib采用了`FastClass`的机制来实现对被拦截方法的调用。FastClass机制会对一个类的方法建立索引，通过索引来直接调用相应的方法，提高了效率。
+当调用代理类的`query()`方法时，会寻找该`query()`方法上有没有被绑定拦截器(比如说编写代码时实现的`MethodInterceptor`接口)，没有的话则不需要代理。JDK动态代理的拦截对象是通过反射的机制来调用被拦截方法的，反射的效率较低，cglib采用了[FastClass](https://www.jianshu.com/p/0604d79435f1) 的机制来实现对被拦截方法的调用。FastClass机制会对一个类的方法建立索引，通过索引来直接调用相应的方法，提高了效率。
 
 # 参考文章
 
