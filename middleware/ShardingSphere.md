@@ -1,3 +1,4 @@
-### ShardingSphere待更新......
+# 🍁ShardingSphere
+---
 
-> 逝者如斯夫，不舍昼夜，只有不断学习，才能发现自己的渺小！
+- [ShardingSphere 实操MySQL分库分表实战](https://segmentfault.com/a/1190000038241298)
