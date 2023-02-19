@@ -310,11 +310,14 @@
 ## 🐇 RabbitMQ实战
    - [RabbitMQ实战](middleware/RabbitMQ实战)
 
-## 💥 Kafka
-   - [Kafka](middleware/Kafka)
-
 ## 🐷 Zookeeper
    - [Zookeeper](middleware/Zookeeper)
+
+## 🐘 Hadoop
+   - [Hadoop](middleware/Hadoop)
+
+## 💥 Kafka
+- [Kafka](middleware/Kafka)
 
 ## 🍁 分库分表框架
    - [结构与目录](middleware/分库分表框架)

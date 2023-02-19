@@ -1,3 +1,9 @@
+# RabbitMQ实战
+---
+
+- [RabbitMQ消息队列--1 -谷粒商城](https://blog.csdn.net/qq_43284469/article/details/120914682?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167677395816782429735695%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167677395816782429735695&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-2-120914682-null-null.blog_rank_default&utm_term=rabbitmq&spm=1018.2226.3001.4450)
+- [RabbitMQ消息队列--2 -谷粒商城](https://blog.csdn.net/qq_43284469/article/details/120928040?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167677395816782429735695%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167677395816782429735695&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-1-120928040-null-null.blog_rank_default&utm_term=rabbitmq&spm=1018.2226.3001.4450)
+
 ### 1.什么是MQ？
 
 `Message Queue` 消息队列
@@ -156,3 +162,4 @@ RabbitMQ是使用erlang语言开发的AMQP的开源实现的消息队列中间�
   ![](https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-08-07/fe19a636-6eaf-4c76-8809-c2ad44efaf90.png)
 - 实现2：给消息设置过期时间
   ![](https://vue-admin-imgages.oss-cn-hangzhou.aliyuncs.com/2022-08-07/cfc71b82-c0bc-49c1-baf5-8c10bd57c2ec.png)
+
